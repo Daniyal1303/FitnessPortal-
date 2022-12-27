@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+   
+    
+    .loginContainer{
+        @apply flex flex-col items-start gap-10 px-12 py-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl
+    }
+   
+    .loginH1{
+
+        @apply text-[#2e2e2e] text-3xl font-bold
+      
+      }
+
+    .loginheader{
+
+        @apply text-center w-full
+      
+      }  
+
+    .logininput{
+    @apply  border-b border-black pl-4
+   }
+
+   .logininput::placeholder {
+
+   @apply text-white
+
+   }
+
+   .logininputdiv{
+    @apply flex align-middle
+   }
+   
+   .loginicon{
+    @apply relative top-1.5 left-4
+   }
+  
+   .loginbtndiv{
+    @apply w-full text-center
+   }
+
+   .login-btn{
+        @apply  bg-gray-200 px-8 py-2 text-black font-semibold rounded-3xl
+   }
+   .logininput:focus{
+    outline: none;
+    border-bottom: 2px solid white;
+   }
+   .example::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+}
