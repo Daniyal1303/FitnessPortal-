@@ -1,7 +1,6 @@
 import { NextResponse } from "next/dist/server/web/spec-extension/response";
 
 // import Cookies  from 'js-cookie';
-
 import type { NextRequest } from 'next/server'
 
 
@@ -27,8 +26,8 @@ import type { NextRequest } from 'next/server'
 
   
     if(loginToken && url === "http://localhost:3000/" && isAdmin) {
-        return NextResponse.redirect(`http://localhost:3000/trainee`)
-       }
+        return (NextResponse.redirect(`http://localhost:3000/trainee`))
+    }
     else if(loginToken  && url  === "http://localhost:3000/" && User ){
         return NextResponse.redirect(`http://localhost:3000/payfees/${userName}`)
        }

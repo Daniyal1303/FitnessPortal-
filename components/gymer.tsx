@@ -7,30 +7,31 @@ import Link from 'next/link';
 const Gymer = () => {
 
 
-  interface gymerArray {
+  interface gymerObject {
 
     profilePath: string,
-    firstName: String,
-    lastName: String,
+    firstName: string,
+    lastName: string,
     email: string,
     userName: string,
-    systemRole: String,
+    systemRole: string,
     payableFees?: number,
     feesPaid?: number,
 
 
   }
   
-
-  const users = useSelector((state: RootState) => state?.reducer?.user?.userList)
-
-  
-  
-  
-  const gymers = users.filter((user:gymerArray ) => user.systemRole === "ASSISTANT")
-
  
-if(gymers.feesPaid)
+
+
+  const users:Array<gymerObject> = useSelector((state: RootState) => state?.reducer?.user?.userList)
+
+  
+  
+  
+  const gymers = users.filter((user:gymerObject) => user.systemRole === "ASSISTANT")
+ 
+if(gymers?.feesPaid)
 {
   let btn = document.getElementById('tablebtn') as HTMLButtonElement;
   btn.style.backgroundColor = "purple";
@@ -38,7 +39,7 @@ if(gymers.feesPaid)
 
 }
 
-else if(users.payableFees) {
+else if(gymers?.payableFees) {
   let btn = document.getElementById('tablebtn') as HTMLButtonElement;
   btn.style.backgroundColor = "purple";
   btn.textContent = "Assigned Payment";
@@ -70,7 +71,7 @@ else if(users.payableFees) {
 
         {
 
-          gymers.map((gymer: gymerArray) => {
+          gymers.map((gymer: gymerObject) => {
 
             return (
 

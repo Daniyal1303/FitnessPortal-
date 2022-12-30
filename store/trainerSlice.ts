@@ -4,26 +4,28 @@ import { createSlice, current } from "@reduxjs/toolkit";
 
 type Object = {
 
-    profilePath: string,
-    firstName: String,
-    lastName: String,
+   
+
+    trainerid: number,
+    uploadimage: string|undefined,
+    firstName: string,
+    lastName: string,
     email: string,
-    userName: string,
-    systemRole: String,
-    payableFees?: number,
-    feesPaid?: number,
+    birthdate: string,
+    programplan: string,
+    sex: string,
 
 
   }
 
-interface TrainerType {
-    trainerList: Object[]
+type TrainerType = {
+    trainerList:Object[]
 }
-const initialState = {
+const initialState : TrainerType= {
 
     trainerList: []
 
-} as TrainerType
+} 
 
 const trainerSlice = createSlice({
 

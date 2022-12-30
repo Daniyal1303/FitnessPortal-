@@ -4,6 +4,8 @@ import {createSlice} from '@reduxjs/toolkit';
 const traineeSlice = createSlice({
 
     name : 'trainee',
+
+    
     
     initialState: [] as Array<Object>,
 

@@ -9,7 +9,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import toast, { Toaster } from "react-hot-toast";
 
+
 import * as yup from 'yup';
+import { RootState } from '../store/store';
 
 
 
@@ -35,7 +37,7 @@ const GymTrainer = () => {
 
   }
 
-  const instructors = useSelector((state:any) => state?.reducer?.trainer?.trainerList);
+  const instructors:Array<instructorArray> = useSelector((state:RootState) => state?.reducer?.trainer?.trainerList);
 
   const modelform = () => {
 
@@ -220,7 +222,8 @@ const GymTrainer = () => {
                     type="file"
                     onChange={e => {
                       formik.handleChange(e)
-                      let file = e.target.files[0];
+                      let target = e.target as HTMLInputElement;
+                      let file:File = (target.files as FileList)[0] ;
                       const reader = new FileReader();
                       reader.readAsDataURL(file);
                       reader.addEventListener("load", function (e: any) {

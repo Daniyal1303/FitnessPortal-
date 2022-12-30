@@ -1,16 +1,31 @@
 import {createSlice, current} from '@reduxjs/toolkit';
 
 
+interface gymerObject {
+
+    profilePath: string,
+    firstName: string,
+    lastName: string,
+    email: string,
+    userName: string,
+    systemRole: string,
+    payableFees?: number,
+    feesPaid?: number,
+
+
+  }
+
+
 interface UserType {
-    userList: Array<Object>
+    userList: Array<gymerObject>
 }
 
-const initialState = {
+const initialState:UserType = {
 
     userList: [],
     
 
-} as UserType
+} 
 
 const userSlice = createSlice({
     
@@ -39,7 +54,7 @@ const userSlice = createSlice({
                 
               
                     const {feesPaid,totalFees} =action.payload
-                let UpdatedUser= {...currentUser,feesPaid,totalFees}
+                    let UpdatedUser= {...currentUser,feesPaid,totalFees}
                     state.userList =  current(state).userList.filter((user:any)=> user.userName !== userName );
                     console.log("State",state.userList)
                     state.userList = current(state).userList.concat(UpdatedUser);
