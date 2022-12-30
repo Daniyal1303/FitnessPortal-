@@ -21,7 +21,7 @@ interface credentialType {
 
 const Login = () => {
          
-  const allusers = useSelector((state) => state?.reducer?.user?.userList)
+  const allusers = useSelector((state:any) => state?.reducer?.user?.userList)
 
   const dispatch  = useDispatch()
 
