@@ -9,7 +9,7 @@ import { updateuser } from '../../store/userSlice';
 import type { RootState } from '../../store/store'
 
 
-const payment = () => {
+const Payment = () => {
 
     
 
@@ -141,7 +141,7 @@ const payment = () => {
     )
 }
 
-export default payment
+export default Payment
 
 
 

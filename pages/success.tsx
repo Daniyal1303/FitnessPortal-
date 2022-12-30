@@ -33,7 +33,7 @@ const Success = () => {
 
       },3000)
 
-  }, [])
+  },[])
 
 
   return (

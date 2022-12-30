@@ -157,12 +157,12 @@ const GymTrainer = () => {
         </thead>
         {
 
-          instructors.map((instructor: instructorArray) => {
+          instructors.map((instructor: instructorArray,idx:any) => {
 
             return (
 
-              <tbody>
-                <tr key={instructor.trainerid.toString()} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+              <tbody key={idx}>
+                <tr key={instructor.email} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 
                   <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <Image className="w-10 h-10 rounded-full" src={instructor.uploadimage as string} width={20} height={10} alt="trainerimage" />

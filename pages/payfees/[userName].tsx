@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 
+import Image from "next/image"
+
 import { useState} from "react"
 
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,7 +16,7 @@ import Stripe from 'stripe'
 
 
 
-const payment = () => {
+const Payment = () => {
 
 
     
@@ -25,7 +27,7 @@ const payment = () => {
 
     const { userName } = router.query;
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const trainees = useSelector((state: RootState) => state.reducer?.user.userList)
 
@@ -88,7 +90,8 @@ const payment = () => {
 
                                             <div className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                                                 <div className="photo-wrapper p-2">
-                                                    <img className="w-32 h-32 rounded-full mx-auto" src={trainee?.profilePath} alt={trainee?.firstName} />
+                                                    <Image className="w-32 h-32 rounded-full mx-auto" src={trainee?.profilePath as string} width={20} height={10} alt="traineRimage" />
+
                                                 </div>
                                                 <div className="pl-3">
                                                     <div className="text-base font-semibold">{trainee?.userName}</div>
@@ -172,7 +175,7 @@ const payment = () => {
                                         <div key="2" id="feeModal" className="  w-fit h-fit  bg-[#fff] rounded-[10px] shadow-[0px 1px 2px #E1E3E5] border border-[#E1E3E5] divide-y">                                                  <div className="pt-[15px] px-[25px] pb-[25px]">
                                                       <div>
                                                           <p className="text-[#717F87] text-[18px] leading-[28px] font-medium">
-                                                              Sorry, yours' gym fees is not assigned by Admin.
+                                                              Sorry, yourssdc gym fees is not assigned by Admin.
                                                           </p>
  
                                                       </div>
@@ -235,4 +238,4 @@ const payment = () => {
     )
 }
 
-export default payment
+export default Payment
